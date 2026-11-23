@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenTrace OSINT</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7f9;
+    color:#333;
+}
+
+header{
+    background:#1f7a4c;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.search-box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-box h2{
+    margin-bottom:15px;
+}
+
+input{
+    width:75%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    padding:12px 20px;
+    background:#1f7a4c;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#16643d;
+}
+
+.report{
+    margin-top:25px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    display:none;
+}
+
+.section{
+    margin-bottom:20px;
+}
+
+.section h3{
+    color:#1f7a4c;
+    margin-bottom:8px;
+    border-bottom:2px solid #eee;
+    padding-bottom:5px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+footer{
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+    color:#666;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>GreenTrace OSINT</h1>
+    <p>Corporate Supply Chain & Environmental Footprint Analyzer</p>
+</header>
+
+<div class="container">
+
+    <div class="search-box">
+        <h2>Search for a Brand or Company</h2>
+        <input type="text" id="companyInput" placeholder="Enter company name">
+        <button onclick="generateReport()">Analyze</button>
+    </div>
+
+    <div class="report" id="report">
+
+        <div class="section">
+            <h3>Company Information</h3>
+            <p id="companyName"></p>
+        </div>
+
+        <div class="section">
+            <h3>Ownership</h3>
+            <p>Parent company information appears here.</p>
+        </div>
+
+        <div class="section">
+            <h3>Manufacturing Locations</h3>
+            <ul>
+                <li>Country / Region 1</li>
+                <li>Country / Region 2</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Compliance & Environmental Records</h3>
+            <ul>
+                <li>Environmental disclosure</li>
+                <li>Labor compliance record</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Certifications</h3>
+            <ul>
+                <li>ISO 14001</li>
+                <li>Fair Trade</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Sources</h3>
+            <ul>
+                <li>Corporate Website</li>
+                <li>OpenCorporates</li>
+                <li>Government Database</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    GreenTrace OSINT | Open-Source Intelligence Project
+</footer>
+
+<script>
+function generateReport() {
+    let company = document.getElementById("companyInput").value.trim();
+
+    if(company === ""){
+        alert("Please enter a company name.");
+        return;
+    }
+
+    document.getElementById("companyName").innerHTML =
+        "<strong>Brand:</strong> " + company;
+
+    document.getElementById("report").style.display = "block";
+}
+</script>
+
+</body>
+</html>
